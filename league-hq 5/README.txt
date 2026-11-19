@@ -1,5 +1,5 @@
 LEAGUE HQ — INDIGO FOOTBALL LEAGUE
-Version 0.5.0 — Playoffs & Weekly Media Center
+Version 0.5.2 — Frivolities Archive
 
 INSTALL
 1. Extract this ZIP to a folder.
@@ -105,3 +105,12 @@ PRIVACY / SAFETY
 - No franchise writes are performed. The extension only imports module data and fetches replay files.
 - The extension requests access only to all22pokemon.com and the public blob storage host used for
   replay assets.
+
+
+WHAT'S NEW IN 0.5.2 — FRIVOLITIES
+- Adds a Frivolities archive page with the Record Room, Rabbit Hole, Time Machine, Laboratory, Funhouse and Surprise Me discovery.
+- Reads the existing League HQ IndexedDB stores (schema version 2); it does not create a separate database or clear existing records.
+- Player line leaderboards use replay-verified game records. Coverage counts are displayed and explicitly caution that the local archive may not represent complete league history.
+- Player labels preserve the collector's nickname (species) display name.
+- Random historical game/player and single-game passing, rushing and receiving leaderboards are generated from stored records.
+- Comparison tools in the Laboratory are clearly marked as planned rather than displaying invented comparisons.

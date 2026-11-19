@@ -5,8 +5,8 @@
   <aside class="sidebar">
     <div class="brand"><div class="brand-mark">IFL</div><div><div class="brand-name">LEAGUE HQ</div><div class="brand-sub">INDIGO FOOTBALL LEAGUE</div></div></div>
     <div class="side-label">COMMISSIONER OFFICE</div>
-    <button class="nav active" data-page="overview"><span>▦</span> Overview</button><button class="nav" id="navCollector" data-page="collector"><span>⇩</span> Game Week Collector</button><button class="nav" id="navDatabase" data-page="database"><span>▤</span> League Database</button><button class="nav" id="navMedia" data-page="media"><span>▣</span> Media Center</button>
-    <div class="sidebar-bottom"><div class="live-dot"></div><span>LOCAL DATABASE ACTIVE</span><div class="version">V0.4.0</div></div>
+    <button class="nav active" data-page="overview"><span>▦</span> Overview</button><button class="nav" id="navCollector" data-page="collector"><span>⇩</span> Game Week Collector</button><button class="nav" id="navDatabase" data-page="database"><span>▤</span> League Database</button><button class="nav" id="navMedia" data-page="media"><span>▣</span> Media Center</button><button class="nav" data-page="frivolities"><span>✦</span> Frivolities</button>
+    <div class="sidebar-bottom"><div class="live-dot"></div><span>LOCAL DATABASE ACTIVE</span><div class="version">V0.5.2</div></div>
   </aside>
   <main class="main">
     <header class="topbar"><div><div class="eyebrow">COMMISSIONER CONTROL ROOM</div><h1>League Overview</h1></div><div class="top-actions"><span class="read-only">READ-ONLY FRANCHISE ACCESS</span><button class="small-btn" id="refreshBtn">↻ Refresh</button></div></header>
@@ -33,6 +33,7 @@
       <div class="db-tabs" role="tablist"><button class="db-tab active" data-dbtab="teams">Teams</button><button class="db-tab" data-dbtab="players">Players</button><button class="db-tab" data-dbtab="games">Games</button><button class="db-tab" data-dbtab="standings">Standings</button><button class="db-tab" data-dbtab="playoffs">Playoffs</button><button class="db-tab" data-dbtab="stats">Statistics</button><button class="db-tab" data-dbtab="records">Records</button></div>
       <div id="dbContent"></div>
     </section>
+    <section id="frivolitiesPage" class="database-page hidden"><div class="db-heading"><div><div class="eyebrow">INDIGO FOOTBALL LEAGUE</div><h2>Frivolities</h2><p class="muted">The numbers nobody asked for. The stories everybody will remember.</p></div><button class="primary" data-action="surprise">SURPRISE ME →</button></div><div id="frivolitiesContent"></div></section>
     <footer>LEAGUE HQ <span>•</span> A COMMISSIONER-ONLY TOOL <span>•</span> DATA IS STORED LOCALLY IN THIS BROWSER</footer>
   </main>
-</div><script src="dashboard.js"></script></body></html>
+</div><script src="dashboard.js"></script><script src="frivolities.js"></script></body></html>
