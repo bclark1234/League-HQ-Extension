@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
   "name": "League HQ — Indigo Football League",
-  "version": "0.5.2",
-  "description": "Commissioner dashboard, playoff-aware historical data collector, weekly newsroom and Frivolities archive for the Indigo Football League.",
+  "version": "0.6.0",
+  "description": "Indigo Football League commissioner platform with a unified media department, historical records, broadcast research, awards watchlists and graphics studio.",
   "permissions": [
     "tabs",
     "storage",
