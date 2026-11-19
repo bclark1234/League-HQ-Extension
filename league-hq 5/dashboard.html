@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>League HQ | Indigo Football League</title><link rel="stylesheet" href="dashboard.css"></head>
+<body>
+<div class="app-shell">
+  <aside class="sidebar">
+    <div class="brand"><div class="brand-mark">IFL</div><div><div class="brand-name">LEAGUE HQ</div><div class="brand-sub">INDIGO FOOTBALL LEAGUE</div></div></div>
+    <div class="side-label">COMMISSIONER OFFICE</div>
+    <button class="nav active" data-page="overview"><span>▦</span> Overview</button><button class="nav" id="navCollector" data-page="collector"><span>⇩</span> Game Week Collector</button><button class="nav" id="navDatabase" data-page="database"><span>▤</span> League Database</button><button class="nav" id="navMedia" data-page="media"><span>▣</span> Media Center</button>
+    <div class="sidebar-bottom"><div class="live-dot"></div><span>LOCAL DATABASE ACTIVE</span><div class="version">V0.4.0</div></div>
+  </aside>
+  <main class="main">
+    <header class="topbar"><div><div class="eyebrow">COMMISSIONER CONTROL ROOM</div><h1>League Overview</h1></div><div class="top-actions"><span class="read-only">READ-ONLY FRANCHISE ACCESS</span><button class="small-btn" id="refreshBtn">↻ Refresh</button></div></header>
+    <div id="overviewPage">
+    <section class="hero"><div class="hero-copy"><div class="eyebrow light">THE LEAGUE, IN ONE PLACE</div><h2>Every week.<br><em>Every number.</em></h2><p>Collect official franchise data, validate game results, and build the league's permanent record.</p><button class="primary" id="heroCollect">Collect Game Week Data <b>→</b></button></div><div class="hero-art"><div class="orb orb-one"></div><div class="orb orb-two"></div><div class="hero-monogram">IFL<span>32</span></div><div class="hero-caption">EST. INDIGO FOOTBALL LEAGUE</div></div></section>
+    <section class="stats-grid"><article class="stat-card"><div class="stat-label">TEAMS IN LEAGUE</div><div class="stat-value" id="teamCount">—</div><div class="stat-note">Detected from active franchise</div></article><article class="stat-card"><div class="stat-label">PLAYERS TRACKED</div><div class="stat-value" id="playerCount">—</div><div class="stat-note">Current franchise rosters</div></article><article class="stat-card"><div class="stat-label">GAMES IN DATABASE</div><div class="stat-value" id="gameCount">0</div><div class="stat-note">Unique game IDs stored</div></article><article class="stat-card"><div class="stat-label">LAST IMPORT</div><div class="stat-value small-value" id="lastImport">NOT YET</div><div class="stat-note" id="lastImportNote">Run your first collection</div></article></section>
+    <section class="content-grid">
+      <article class="panel collector-panel" id="collectorPanel"><div class="panel-head"><div><div class="eyebrow">DATA OPERATIONS</div><h3>Game Week Collector</h3></div><span class="pill">MANUAL IMPORT</span></div><p class="muted">Your active All22 franchise is the source of truth. Select a week, scan completed games, review the results, then commit them to your local League HQ database.</p>
+        <div class="form-row"><label for="weekSelect">COLLECTION MODE</label><select id="weekSelect"><option value="currentWeek">Latest available regular-season week</option><option value="allRegular">All completed regular-season weeks</option><option value="allPlayoffs">Playoffs only (all rounds)</option><option value="everything">Regular season + playoffs (everything)</option></select></div>
+        <div class="button-row"><button class="primary" id="scanBtn">Scan Franchise Data <b>→</b></button><button class="secondary" id="allBtn">Full Historical Import</button></div>
+        <div class="progress-wrap hidden" id="progressWrap"><div class="progress-top"><span id="progressLabel">Scanning franchise…</span><span class="spinner"></span></div><div class="progress-track"><div class="progress-fill"></div></div></div>
+        <div id="preview" class="preview hidden"></div>
+      </article>
+      <article class="panel status-panel"><div class="panel-head"><div><div class="eyebrow">SYSTEM STATUS</div><h3>Data Integrity</h3></div><span class="status-mark">✓</span></div><div class="integrity-row"><div><b>Read-only connection</b><small>League HQ never writes to All22</small></div><span class="tag good">ENABLED</span></div><div class="integrity-row"><div><b>Duplicate protection</b><small>Game IDs are unique keys</small></div><span class="tag good">ENABLED</span></div><div class="integrity-row"><div><b>Replay verification</b><small>Missing replay files are flagged</small></div><span class="tag warn">WHEN AVAILABLE</span></div><div class="integrity-row"><div><b>Local persistence</b><small>Stored in this browser profile</small></div><span class="tag good">INDEXEDDB</span></div></article>
+    </section>
+    <section class="panel imports-panel" id="databasePanel"><div class="panel-head"><div><div class="eyebrow">AUDIT TRAIL</div><h3>Recent Imports</h3></div><div class="db-actions"><button class="text-btn" id="importBtn">Import database ↑</button><button class="text-btn" id="exportBtn">Export database ↓</button><input id="importFile" type="file" accept="application/json,.json" hidden></div></div><div id="importsTable" class="empty-state"><div class="empty-icon">▤</div><b>No imports yet</b><span>Your collection history will appear here.</span></div></section>
+    </div>
+    <section id="mediaPage" class="database-page hidden">
+      <div class="db-heading"><div><div class="eyebrow">IFL NETWORK</div><h2>Media Center</h2><p class="muted">Build fact-checked weekly coverage from collected game results and replay-verified player statistics.</p></div><button class="small-btn" id="mediaRefresh">↻ Refresh stories</button></div>
+      <div id="mediaContent"></div>
+    </section>
+    <section id="databasePage" class="database-page hidden">
+      <div class="db-heading"><div><div class="eyebrow">LEAGUE RECORDS</div><h2>League Database</h2><p class="muted">Browse teams, Pokémon players, game logs, standings and verified statistics across your collected franchise history.</p></div><div class="db-heading-actions"><label class="season-label">SEASON <select id="seasonFilter" class="db-select"><option value="all">All seasons</option></select></label><button class="small-btn" id="dbRefresh">↻ Refresh database</button></div></div>
+      <div class="db-tabs" role="tablist"><button class="db-tab active" data-dbtab="teams">Teams</button><button class="db-tab" data-dbtab="players">Players</button><button class="db-tab" data-dbtab="games">Games</button><button class="db-tab" data-dbtab="standings">Standings</button><button class="db-tab" data-dbtab="playoffs">Playoffs</button><button class="db-tab" data-dbtab="stats">Statistics</button><button class="db-tab" data-dbtab="records">Records</button></div>
+      <div id="dbContent"></div>
+    </section>
+    <footer>LEAGUE HQ <span>•</span> A COMMISSIONER-ONLY TOOL <span>•</span> DATA IS STORED LOCALLY IN THIS BROWSER</footer>
+  </main>
+</div><script src="dashboard.js"></script></body></html>
