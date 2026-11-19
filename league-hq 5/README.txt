@@ -114,3 +114,20 @@ WHAT'S NEW IN 0.5.2 — FRIVOLITIES
 - Player labels preserve the collector's nickname (species) display name.
 - Random historical game/player and single-game passing, rushing and receiving leaderboards are generated from stored records.
 - Comparison tools in the Laboratory are clearly marked as planned rather than displaying invented comparisons.
+
+
+VERSION 0.6.0 — LEAGUE MEDIA DEPARTMENT
+- Adds a unified Media Department alongside the existing Media Center and Frivolities tools.
+- Newsroom: builds copy-ready edition recaps, closest-finish and scoring spotlights, plus replay-verified player spotlights from the latest collected season.
+- Broadcast Booth: creates a historical matchup dossier with archived team records, head-to-head count, player yardage leaders and copy-ready notes. It explicitly does not claim upcoming schedule data that is not stored.
+- Awards Desk: provides statistical watchlists for passing, rushing, receiving and defensive categories. These are not automatic official award decisions.
+- Franchise Files: provides team profiles, archived records, stored roster snapshots and game history.
+- Record Watch: provides single-game replay-verified leaderboards and career yardage totals within the local archive.
+- Graphics Studio: creates downloadable SVG social/broadcast templates with editable headline, subhead, label and accent color.
+- League Archives: season summaries and a clearly labeled Hall of Fame research shortlist, not automatic inductions.
+- All departments read the existing IndexedDB v2 stores. No new store, migration, data reset, or writes to All22 are introduced.
+- Every data-driven department identifies archive coverage and replay verification limitations. Historical completeness depends on what the commissioner has imported.
+- The pre-existing Media Center and Frivolities remain available as separate pages.
+
+TESTING NOTE
+The source has been integrated on a separate development branch. Browser-based functional testing against a live authenticated All22 franchise has not yet been performed. Review the branch and test with an exported database backup before relying on it for official reporting.
