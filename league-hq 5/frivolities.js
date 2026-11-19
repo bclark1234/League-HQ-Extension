@@ -112,7 +112,7 @@
       root.innerHTML='<div class="db-empty"><b>Could not load Frivolities</b>'+esc(error?.message||'IndexedDB could not be read.')+'</div>';
     }
   }
-  root.addEventListener('click',event=>{
+  document.getElementById('frivolitiesPage').addEventListener('click',event=>{
     const button=event.target.closest('[data-action],[data-category]');
     if(!button)return;
     if(button.dataset.category) mode=button.dataset.category;
