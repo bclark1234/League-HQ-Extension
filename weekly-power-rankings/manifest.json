@@ -1,0 +1,43 @@
+{
+  "manifest_version": 3,
+  "name": "IFL Power Rankings & Player Watch",
+  "version": "1.0.0",
+  "description": "Standalone Indigo Football League weekly power rankings and matchup player watchlists.",
+  "permissions": [
+    "tabs",
+    "storage",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "https://all22pokemon.com/*",
+    "https://*.public.blob.vercel-storage.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "Open IFL Power Rankings"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://all22pokemon.com/franchise*"
+      ],
+      "js": [
+        "collector-bridge.js"
+      ],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": [
+        "https://all22pokemon.com/franchise*"
+      ],
+      "js": [
+        "collector-main.js",
+        "analytics-stats.js"
+      ],
+      "run_at": "document_idle",
+      "world": "MAIN"
+    }
+  ]
+}
