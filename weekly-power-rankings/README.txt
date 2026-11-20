@@ -12,6 +12,8 @@ INSTALL
 7. Click COLLECT FROM ALL22. The extension reads available results, teams, player identities, rosters and replay stats from the active franchise.
 
 POWER RANKINGS MODEL
+The selected Week or Playoff Round is an as-of cutoff. Regular-season Week N uses only regular-season results through Week N. Selecting a playoff round uses the regular-season baseline plus only that round and earlier playoff rounds; later playoff rounds are excluded. Player watchlists use only verified player stats from before the selected week or round. There is no fallback to all-season data when the pre-period sample is empty.
+
 The weekly ranking is separate from standings and uses these weighted components:
 - Win percentage: 30%
 - Point differential per game: 25%
